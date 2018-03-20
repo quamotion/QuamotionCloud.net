@@ -1,4 +1,7 @@
 # QuamotionCloud.net
+| build | NuGet |
+|-------|-------|
+| [![Build Status](https://ci.appveyor.com/project/bartsaintgermain/quamotioncloud-net)](https://ci.appveyor.com/project/bartsaintgermain/quamotioncloud-net)|
 
 The QuamotionCloud.net provides C# bindings for the Quamotion Cloud.
 
