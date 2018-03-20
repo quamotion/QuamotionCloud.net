@@ -5,5 +5,5 @@ build_script:
   - cmd: dotnet pack -c Release
 
 artifacts:
-  - path: 'CloudClient\bin\Debug\*.nupkg'
+  - path: 'CloudClient\bin\Release\*.nupkg'
     name: NuGet
