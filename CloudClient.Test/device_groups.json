@@ -1,0 +1,670 @@
+﻿[
+  {
+    "deviceGroupId": "9415b293-9f73-4dd2-865e-4b7e02d11bd4",
+    "name": "genymotion-top-25-devices",
+    "displayName": "Genymotion top 25 devices",
+    "devices": [
+      {
+        "deviceSelectionId": "74ad0f8b-90f5-47c5-bc7a-9c05b04de4ca",
+        "displayName": "Google Pixel - Android 8.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "74ad0f8b-90f5-47c5-bc7a-9c05b04de4ca" }
+      },
+      {
+        "deviceSelectionId": "00cd578a-14de-4f47-b4f1-d454d613d9da",
+        "displayName": "Google Nexus 6P - Android 7.1 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "00cd578a-14de-4f47-b4f1-d454d613d9da" }
+      },
+      {
+        "deviceSelectionId": "6185bb7c-1f96-40bb-9f6c-798bd7547d36",
+        "displayName": "Samsung Galaxy S7 - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "6185bb7c-1f96-40bb-9f6c-798bd7547d36" }
+      },
+      {
+        "deviceSelectionId": "9f1adea8-e280-460d-9319-580570f61e8c",
+        "displayName": "Google Nexus 6P - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "9f1adea8-e280-460d-9319-580570f61e8c" }
+      },
+      {
+        "deviceSelectionId": "8f373fa1-97fa-4652-84c8-a006459d50a0",
+        "displayName": "Samsung Galaxy S8 - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "8f373fa1-97fa-4652-84c8-a006459d50a0" }
+      },
+      {
+        "deviceSelectionId": "46028057-70cd-49f5-9c91-d7413b4e4400",
+        "displayName": "Google Nexus 6P - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "46028057-70cd-49f5-9c91-d7413b4e4400" }
+      },
+      {
+        "deviceSelectionId": "a2a0c86c-7572-45fe-98d0-66f8efed9fa0",
+        "displayName": "Samsung Galaxy S7 - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "a2a0c86c-7572-45fe-98d0-66f8efed9fa0" }
+      },
+      {
+        "deviceSelectionId": "35d91457-dbfe-47ac-98fc-3271440753c4",
+        "displayName": "Google Pixel C - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "35d91457-dbfe-47ac-98fc-3271440753c4" }
+      },
+      {
+        "deviceSelectionId": "445e774c-a9e9-49bd-84b9-673c4e9f7163",
+        "displayName": "Google Nexus 9 - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "445e774c-a9e9-49bd-84b9-673c4e9f7163" }
+      },
+      {
+        "deviceSelectionId": "082aa083-451d-4d4d-a680-b784d2012b94",
+        "displayName": "Samsung Galaxy S6 - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "082aa083-451d-4d4d-a680-b784d2012b94" }
+      },
+      {
+        "deviceSelectionId": "8616f424-caac-4dc9-864d-d1381b1b6360",
+        "displayName": "Google Nexus 7 - Android 5.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "8616f424-caac-4dc9-864d-d1381b1b6360" }
+      },
+      {
+        "deviceSelectionId": "865d12b1-d839-49a7-90cf-175cab4ba51f",
+        "displayName": "Samsung Galaxy S6 - Android 5.1 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "865d12b1-d839-49a7-90cf-175cab4ba51f" }
+      },
+      {
+        "deviceSelectionId": "57110e09-24f5-4e32-b4ea-a549e95970bf",
+        "displayName": "Google Pixel Nexus 7 - Android 5.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "57110e09-24f5-4e32-b4ea-a549e95970bf" }
+      },
+      {
+        "deviceSelectionId": "7fad4b10-140c-4227-84d0-22dd88c8f8b1",
+        "displayName": "Samsung Galaxy S6 - Android 5.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "7fad4b10-140c-4227-84d0-22dd88c8f8b1" }
+      },
+      {
+        "deviceSelectionId": "c6e1222c-993e-4bf2-840f-4795792f2143",
+        "displayName": "Google Nexus 10 - Android 5.1 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "c6e1222c-993e-4bf2-840f-4795792f2143" }
+      },
+      {
+        "deviceSelectionId": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2",
+        "displayName": "Google Nexus 7 - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2" }
+      },
+      {
+        "deviceSelectionId": "4a7cf261-fa75-4a18-a564-718ebefba390",
+        "displayName": "Samsung Galaxy S5 - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "4a7cf261-fa75-4a18-a564-718ebefba390" }
+      },
+      {
+        "deviceSelectionId": "47f68b9a-08cb-4b55-b0a7-a6664d118829",
+        "displayName": "Motorola Moto X - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "47f68b9a-08cb-4b55-b0a7-a6664d118829" }
+      },
+      {
+        "deviceSelectionId": "2f71872c-8bbc-4260-a284-7c6f50ede169",
+        "displayName": "HTC One - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "2f71872c-8bbc-4260-a284-7c6f50ede169" }
+      },
+      {
+        "deviceSelectionId": "42b60b69-bd60-4c3d-912c-4073d854573d",
+        "displayName": "Google Nexus 10 - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "42b60b69-bd60-4c3d-912c-4073d854573d" }
+      },
+      {
+        "deviceSelectionId": "f4b92009-2b9a-413f-8688-0fd522d7f11e",
+        "displayName": "Google Nexus 7 - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "f4b92009-2b9a-413f-8688-0fd522d7f11e" }
+      },
+      {
+        "deviceSelectionId": "ec578eef-2b01-485a-a7f3-f93fc15c3f0d",
+        "displayName": "Samsung Galaxy Note - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "ec578eef-2b01-485a-a7f3-f93fc15c3f0d" }
+      },
+      {
+        "deviceSelectionId": "8a807602-5d00-407d-b7d8-87e1726aca8f",
+        "displayName": "Sony Xperia Z - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "8a807602-5d00-407d-b7d8-87e1726aca8f" }
+      },
+      {
+        "deviceSelectionId": "c0a4665b-b158-48b6-b429-55cc24711929",
+        "displayName": "HTC Evo 4G LTE - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "c0a4665b-b158-48b6-b429-55cc24711929" }
+      },
+      {
+        "deviceSelectionId": "de170d0f-cd98-422d-9d6c-d7ea00631eb3",
+        "displayName": "Motorola Moto X - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "de170d0f-cd98-422d-9d6c-d7ea00631eb3" }
+      },
+      {
+        "deviceSelectionId": "6185bb7c-1f96-40bb-9f6c-798bd7547d363",
+        "displayName": "Samsung Galaxy S6 - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "6185bb7c-1f96-40bb-9f6c-798bd7547d363" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "74ad0f8b-90f5-47c5-bc7a-9c05b04de4ca",
+    "name": "genymotion-google-pixel-android-8.0",
+    "displayName": "Google Pixel - Android 8.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "74ad0f8b-90f5-47c5-bc7a-9c05b04de4ca",
+        "displayName": "Google Pixel - Android 8.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "74ad0f8b-90f5-47c5-bc7a-9c05b04de4ca" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "00cd578a-14de-4f47-b4f1-d454d613d9da",
+    "name": "genymotion-google-nexus-6p-android-7.1",
+    "displayName": "Google Nexus 6P - Android 7.1 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "00cd578a-14de-4f47-b4f1-d454d613d9da",
+        "displayName": "Google Nexus 6P - Android 7.1 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "00cd578a-14de-4f47-b4f1-d454d613d9da" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "6185bb7c-1f96-40bb-9f6c-798bd7547d36",
+    "name": "genymotion-samsung-galaxy-s7-4.0",
+    "displayName": "Samsung Galaxy S7 - Android 7.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "6185bb7c-1f96-40bb-9f6c-798bd7547d36",
+        "displayName": "Samsung Galaxy S7 - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "6185bb7c-1f96-40bb-9f6c-798bd7547d36" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "9f1adea8-e280-460d-9319-580570f61e8c",
+    "name": "genymotion-google-nexus-6p-android-7.0",
+    "displayName": "Google Nexus 6P - Android 7.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "9f1adea8-e280-460d-9319-580570f61e8c",
+        "displayName": "Google Nexus 6P - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "9f1adea8-e280-460d-9319-580570f61e8c" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "8f373fa1-97fa-4652-84c8-a006459d50a0",
+    "name": "genymotion-samsung-galaxy-s8-android-7.0",
+    "displayName": "Samsung Galaxy S8 - Android 7.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "8f373fa1-97fa-4652-84c8-a006459d50a0",
+        "displayName": "Samsung Galaxy S8 - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "8f373fa1-97fa-4652-84c8-a006459d50a0" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "46028057-70cd-49f5-9c91-d7413b4e4400",
+    "name": "genymotion-google-nexus-6p-android-6.0",
+    "displayName": "Google Nexus 6P - Android 6.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "46028057-70cd-49f5-9c91-d7413b4e4400",
+        "displayName": "Google Nexus 6P - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "46028057-70cd-49f5-9c91-d7413b4e4400" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "a2a0c86c-7572-45fe-98d0-66f8efed9fa0",
+    "name": "genymotion-samsung-galaxy-s7-android-6.0",
+    "displayName": "Samsung Galaxy S7 - Android 6.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "a2a0c86c-7572-45fe-98d0-66f8efed9fa0",
+        "displayName": "Samsung Galaxy S7 - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "a2a0c86c-7572-45fe-98d0-66f8efed9fa0" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "35d91457-dbfe-47ac-98fc-3271440753c4",
+    "name": "genymotion-google-pixel-c-android-6.0",
+    "displayName": "Google Pixel C - Android 6.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "35d91457-dbfe-47ac-98fc-3271440753c4",
+        "displayName": "Google Pixel C - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "35d91457-dbfe-47ac-98fc-3271440753c4" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "445e774c-a9e9-49bd-84b9-673c4e9f7163",
+    "name": "genymotion-google-nexus-9-android-6.0",
+    "displayName": "Google Nexus 9 - Android 6.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "445e774c-a9e9-49bd-84b9-673c4e9f7163",
+        "displayName": "Google Nexus 9 - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "445e774c-a9e9-49bd-84b9-673c4e9f7163" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "082aa083-451d-4d4d-a680-b784d2012b94",
+    "name": "genymotion-samsung-galaxy-s6-android-6.0",
+    "displayName": "Samsung Galaxy S6 - Android 6.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "082aa083-451d-4d4d-a680-b784d2012b94",
+        "displayName": "Samsung Galaxy S6 - Android 6.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "082aa083-451d-4d4d-a680-b784d2012b94" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "8616f424-caac-4dc9-864d-d1381b1b6360",
+    "name": "genymotion-google-nexus-7-android-5.1",
+    "displayName": "Google Nexus 7 - Android 5.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "8616f424-caac-4dc9-864d-d1381b1b6360",
+        "displayName": "Google Nexus 7 - Android 5.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "8616f424-caac-4dc9-864d-d1381b1b6360" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "865d12b1-d839-49a7-90cf-175cab4ba51f",
+    "name": "genymotion-samsung-galaxy-s6-android-5.1",
+    "displayName": "Samsung Galaxy S6 - Android 5.1 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "865d12b1-d839-49a7-90cf-175cab4ba51f",
+        "displayName": "Samsung Galaxy S6 - Android 5.1 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "865d12b1-d839-49a7-90cf-175cab4ba51f" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "57110e09-24f5-4e32-b4ea-a549e95970bf",
+    "name": "genymotion-google-nexus-7-android-5.0",
+    "displayName": "Google Pixel Nexus 7 - Android 5.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "57110e09-24f5-4e32-b4ea-a549e95970bf",
+        "displayName": "Google Pixel Nexus 7 - Android 5.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "57110e09-24f5-4e32-b4ea-a549e95970bf" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "7fad4b10-140c-4227-84d0-22dd88c8f8b1",
+    "name": "genymotion-samsung-galaxy-s6-android-5.0",
+    "displayName": "Samsung Galaxy S6 - Android 5.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "7fad4b10-140c-4227-84d0-22dd88c8f8b1",
+        "displayName": "Samsung Galaxy S6 - Android 5.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "7fad4b10-140c-4227-84d0-22dd88c8f8b1" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "c6e1222c-993e-4bf2-840f-4795792f2143",
+    "name": "genymotion-google-nexus-10-android-5.1",
+    "displayName": "Google Nexus 10 - Android 5.1 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "c6e1222c-993e-4bf2-840f-4795792f2143",
+        "displayName": "Google Nexus 10 - Android 5.1 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "c6e1222c-993e-4bf2-840f-4795792f2143" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2",
+    "name": "genymotion-google-nexus-7-android-4.4.4",
+    "displayName": "Google Nexus 7 - Android 4.4.4 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2",
+        "displayName": "Google Nexus 7 - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "name": "genymotion-samsung-galaxy-s5-android-4.4.4",
+    "displayName": "Samsung Galaxy S5 - Android 4.4.4 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "4a7cf261-fa75-4a18-a564-718ebefba390",
+        "displayName": "Samsung Galaxy S5 - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "4a7cf261-fa75-4a18-a564-718ebefba390" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "47f68b9a-08cb-4b55-b0a7-a6664d118829",
+    "name": "genymotion-motorola-moto-x-android-4.4.4",
+    "displayName": "Motorola Moto X - Android 4.4.4 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "47f68b9a-08cb-4b55-b0a7-a6664d118829",
+        "displayName": "Motorola Moto X - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "47f68b9a-08cb-4b55-b0a7-a6664d118829" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "2f71872c-8bbc-4260-a284-7c6f50ede169",
+    "name": "genymotion-htc-one-android-4.4.4",
+    "displayName": "HTC One - Android 4.4.4 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "2f71872c-8bbc-4260-a284-7c6f50ede169",
+        "displayName": "HTC One - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "2f71872c-8bbc-4260-a284-7c6f50ede169" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "42b60b69-bd60-4c3d-912c-4073d854573d",
+    "name": "genymotion-google-nexus-10-android-4.4.4",
+    "displayName": "Google Nexus 10 - Android 4.4.4 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "42b60b69-bd60-4c3d-912c-4073d854573d",
+        "displayName": "Google Nexus 10 - Android 4.4.4 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "42b60b69-bd60-4c3d-912c-4073d854573d" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "f4b92009-2b9a-413f-8688-0fd522d7f11e",
+    "name": "genymotion-google-nexus-7-android-4.3",
+    "displayName": "Google Nexus 7 - Android 4.3 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "f4b92009-2b9a-413f-8688-0fd522d7f11e",
+        "displayName": "Google Nexus 7 - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "f4b92009-2b9a-413f-8688-0fd522d7f11e" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "ec578eef-2b01-485a-a7f3-f93fc15c3f0d",
+    "name": "genymotion-samsung-galaxy-note-android-4.3",
+    "displayName": "Samsung Galaxy Note - Android 4.3 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "ec578eef-2b01-485a-a7f3-f93fc15c3f0d",
+        "displayName": "Samsung Galaxy Note - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "ec578eef-2b01-485a-a7f3-f93fc15c3f0d" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "8a807602-5d00-407d-b7d8-87e1726aca8f",
+    "name": "genymotion-sony-xperia-z-android-4.3",
+    "displayName": "Sony Xperia Z - Android 4.3 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "8a807602-5d00-407d-b7d8-87e1726aca8f",
+        "displayName": "Sony Xperia Z - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "8a807602-5d00-407d-b7d8-87e1726aca8f" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "c0a4665b-b158-48b6-b429-55cc24711929",
+    "name": "genymotion-htc-evo-4g-lte-android-4.3",
+    "displayName": "HTC Evo 4G LTE - Android 4.3 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "c0a4665b-b158-48b6-b429-55cc24711929",
+        "displayName": "HTC Evo 4G LTE - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "c0a4665b-b158-48b6-b429-55cc24711929" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "de170d0f-cd98-422d-9d6c-d7ea00631eb3",
+    "name": "genymotion-motorola-moto-x-android-4.3",
+    "displayName": "Motorola Moto X - Android 4.3 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "de170d0f-cd98-422d-9d6c-d7ea00631eb3",
+        "displayName": "Motorola Moto X - Android 4.3 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "de170d0f-cd98-422d-9d6c-d7ea00631eb3" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "57b9dda4-d1e4-423f-89c7-6f523daecb2e",
+    "name": "genymotion-samsung-galaxy-s6-android-7.0",
+    "displayName": "Samsung Galaxy S6 - Android 7.0 (Genymotion)",
+    "devices": [
+      {
+        "deviceSelectionId": "57b9dda4-d1e4-423f-89c7-6f523daecb2e",
+        "displayName": "Samsung Galaxy S6 - Android 7.0 (Genymotion)",
+        "tags": [ "genymotion" ],
+        "variables": { "GENYMOTION_TEMPLATE": "6185bb7c-1f96-40bb-9f6c-798bd7547d363" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "2ee33b01-09a6-4483-827b-1d0498ee9aaa",
+    "name": "physical-ios-11",
+    "displayName": "Physical Device - iOS 11",
+    "devices": [
+      {
+        "deviceSelectionId": "2ee33b01-09a6-4483-827b-1d0498ee9aaa",
+        "displayName": "Physical Device - iOS 11",
+        "tags": [ "ios-11" ],
+        "variables": {}
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "fcbaef4c-607e-459b-9ec6-e6a5b4d88f4e",
+    "name": "physical-android-4.4.2",
+    "displayName": "Physical Device - Android 4.4.2",
+    "devices": [
+      {
+        "deviceSelectionId": "fcbaef4c-607e-459b-9ec6-e6a5b4d88f4e",
+        "displayName": "Physical Device - Android 4.4.2",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "4.4.2" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "1c3e3668-304b-4f3d-8cd5-1130d42b6d3e",
+    "name": "physical-android-4.4.4",
+    "displayName": "Physical Device - Android 4.4.4",
+    "devices": [
+      {
+        "deviceSelectionId": "1c3e3668-304b-4f3d-8cd5-1130d42b6d3e",
+        "displayName": "Physical Device - Android 4.4.4",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "4.4.4" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "a99894ba-d9c5-48bd-b067-2953d55a9ddf",
+    "name": "physical-android-5.0.1",
+    "displayName": "Physical Device - Android 5.0.1",
+    "devices": [
+      {
+        "deviceSelectionId": "a99894ba-d9c5-48bd-b067-2953d55a9ddf",
+        "displayName": "Physical Device - Android 5.0.1",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "5.0.1" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "8473dd87-8508-4959-af03-fb12f3467890",
+    "name": "physical-android-5.0.2",
+    "displayName": "Physical Device - Android 5.0.2",
+    "devices": [
+      {
+        "deviceSelectionId": "8473dd87-8508-4959-af03-fb12f3467890",
+        "displayName": "Physical Device - Android 5.0.2",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "5.0.2" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "0faa1581-82cb-489d-8c7d-b78de3e751c5",
+    "name": "physical-android-5.1",
+    "displayName": "Physical Device - Android 5.1",
+    "devices": [
+      {
+        "deviceSelectionId": "0faa1581-82cb-489d-8c7d-b78de3e751c5",
+        "displayName": "Physical Device - Android 5.1",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "5.1" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "61445dfb-e51c-409c-bb6a-33c573bf25d3",
+    "name": "physical-android-6.0",
+    "displayName": "Physical Device - Android 6.0",
+    "devices": [
+      {
+        "deviceSelectionId": "61445dfb-e51c-409c-bb6a-33c573bf25d3",
+        "displayName": "Physical Device - Android 6.0",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "6.0" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "d80043cd-174c-4cc0-ba00-a3c7e160e981",
+    "name": "physical-android-7.0",
+    "displayName": "Physical Device - Android 7.0",
+    "devices": [
+      {
+        "deviceSelectionId": "d80043cd-174c-4cc0-ba00-a3c7e160e981",
+        "displayName": "Physical Device - Android 7.0",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "7.0" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "8dd113de-2803-4682-9887-5075bd11a7b8",
+    "name": "physical-android-7.1",
+    "displayName": "Physical Device - Android 7.1",
+    "devices": [
+      {
+        "deviceSelectionId": "8dd113de-2803-4682-9887-5075bd11a7b8",
+        "displayName": "Physical Device - Android 7.1",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "7.1" }
+      }
+    ],
+    "variables": {}
+  },
+  {
+    "deviceGroupId": "901ae650-09b2-4c40-a8a6-603d74db8e3c",
+    "name": "physical-android-8.0",
+    "displayName": "Physical Device - Android 8.0",
+    "devices": [
+      {
+        "deviceSelectionId": "901ae650-09b2-4c40-a8a6-603d74db8e3c",
+        "displayName": "Physical Device - Android 8.0",
+        "tags": [ "remotetestkit" ],
+        "variables": { "REMOTETESTKIT_ANDROID_VERSION": "8.0" }
+      }
+    ],
+    "variables": {}
+  }
+]

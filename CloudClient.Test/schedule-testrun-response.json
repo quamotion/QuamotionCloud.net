@@ -1,0 +1,15 @@
+﻿{
+  "testRunId": "a4188fd1-c4d3-4c5d-a952-c43ca816d3bf",
+  "deviceGroup": "4a7cf261-fa75-4a18-a564-718ebefba390",
+  "operatingSystem": 1,
+  "appId": "demo.quamotion.Acquaint",
+  "appVersion": "151",
+  "testPackageName": "quamotion-test-acquaint",
+  "testPackageVersion": "0.0.1.50584433",
+  "scheduled": "2018-03-20T06:11:38+00:00",
+  "commitId": "90bea9e1f8037dbf2097e107fbc38d940b6bd965",
+  "branch": null,
+  "scheduleId": null,
+  "cronSchedule": null,
+  "jobs": []
+}

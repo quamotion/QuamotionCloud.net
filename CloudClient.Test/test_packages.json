@@ -1,0 +1,162 @@
+﻿[
+  {
+    "name": "genymotiontest (8).ps1",
+    "version": "0.31",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest (8).ps1",
+    "version": "0.30",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest (8).ps1",
+    "version": "0.3",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.3",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.2",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.1.0",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.9",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.8",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.7",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "quamotion-acquaint",
+    "version": "0.0.7",
+    "testPackageType": "Pester"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.5",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "quamotion-acquaint",
+    "version": "0.0.5",
+    "testPackageType": "Pester"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.4",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.24",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "test.ps1",
+    "version": "0.0.24",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "test.ps1",
+    "version": "0.0.23",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.22",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.21",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.20",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "quamotion-acquaint",
+    "version": "0.0.2",
+    "testPackageType": "Pester"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.17",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.16",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.15",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.14",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.13",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.12",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.11",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "genymotiontest.ps1",
+    "version": "0.0.10",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "quamotion-test-acquaint",
+    "version": "0.0.1.50584433",
+    "testPackageType": "Pester"
+  },
+  {
+    "name": "acquaint.ps1",
+    "version": "0.0.1",
+    "testPackageType": "PowerShellScript"
+  },
+  {
+    "name": "quamotion-test-acquaint",
+    "version": "0.0.1",
+    "testPackageType": "Pester"
+  },
+  {
+    "name": "quamotion-acquaint",
+    "version": "0.0.1",
+    "testPackageType": "Pester"
+  }
+]

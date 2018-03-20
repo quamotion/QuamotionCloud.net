@@ -1,0 +1,20 @@
+﻿[
+  {
+    "appId": "demo.quamotion.Acquaint",
+    "displayName": "Acquaint N",
+    "version": "151",
+    "versionDisplayName": "1.51",
+    "operatingSystem": "Android",
+    "operatingSystemVersion": "4.2",
+    "cpuType": "ARMv5AndAbove, x86AndAbove"
+  },
+  {
+    "appId": "demo.quamotion.Acquaint",
+    "displayName": "Acquaint N",
+    "version": "1.51",
+    "versionDisplayName": "1.51",
+    "operatingSystem": "iOS",
+    "operatingSystemVersion": "9.0",
+    "cpuType": "All"
+  }
+]

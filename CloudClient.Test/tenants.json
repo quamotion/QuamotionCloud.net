@@ -1,0 +1,51 @@
+﻿[
+  {
+    "name": "acquint",
+    "tenantId": 10,
+    "gitLabId": null,
+    "flags": 0,
+    "relativeUrl": "/project/acquint/"
+  },
+  {
+    "name": "qm-nuc-02",
+    "tenantId": 17,
+    "gitLabId": null,
+    "flags": 0,
+    "relativeUrl": "/project/qm-nuc-02/"
+  },
+  {
+    "name": "aeny",
+    "tenantId": 18,
+    "gitLabId": 5763225,
+    "flags": 0,
+    "relativeUrl": "/project/aeny/"
+  },
+  {
+    "name": "moniron",
+    "tenantId": 19,
+    "gitLabId": 4701078,
+    "flags": 0,
+    "relativeUrl": "/project/moniron/"
+  },
+  {
+    "name": "localbsg",
+    "tenantId": 22,
+    "gitLabId": 4733645,
+    "flags": 0,
+    "relativeUrl": "/project/localbsg/"
+  },
+  {
+    "name": "genymotion",
+    "tenantId": 30,
+    "gitLabId": 5336851,
+    "flags": 0,
+    "relativeUrl": "/project/genymotion/"
+  },
+  {
+    "name": "emptyproject",
+    "tenantId": 32,
+    "gitLabId": 5503266,
+    "flags": 0,
+    "relativeUrl": "/project/emptyproject/"
+  }
+]

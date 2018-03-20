@@ -1,0 +1,182 @@
+﻿[
+  {
+    "id": 58189675,
+    "name": "1c3e3668-304b-4f3d-8cd5-1130d42b6d3e",
+    "status": "failed",
+    "duration": 152.900672,
+    "started": "2018-03-19T13:15:43.239Z",
+    "commitId": "e99c32f6bbbe02e5989da660d1799bdb9ba00230",
+    "hasArtifacts": true
+  },
+  {
+    "id": 58142388,
+    "name": "1c3e3668-304b-4f3d-8cd5-1130d42b6d3e",
+    "status": "failed",
+    "duration": 153.925831,
+    "started": "2018-03-19T09:59:04.274Z",
+    "commitId": "eafee96ff3bda83ef155499d39cff5a6cf35a934",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57838728,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "success",
+    "duration": 135.797651,
+    "started": "2018-03-16T14:39:18.131Z",
+    "commitId": "0b4661ee5fe19329a41bdca62fe190a9780b62f2",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57831874,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "success",
+    "duration": 130.991522,
+    "started": "2018-03-16T14:16:09.248Z",
+    "commitId": "0b4661ee5fe19329a41bdca62fe190a9780b62f2",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57829288,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "success",
+    "duration": 136.633387,
+    "started": "2018-03-16T14:06:24.438Z",
+    "commitId": "0b4661ee5fe19329a41bdca62fe190a9780b62f2",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57828277,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "canceled",
+    "duration": 224.844612,
+    "started": "2018-03-16T14:02:32.132Z",
+    "commitId": "0b4661ee5fe19329a41bdca62fe190a9780b62f2",
+    "hasArtifacts": false
+  },
+  {
+    "id": 57827604,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "success",
+    "duration": 136.200792,
+    "started": "2018-03-16T13:59:33.542Z",
+    "commitId": "0b4661ee5fe19329a41bdca62fe190a9780b62f2",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57821569,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "success",
+    "duration": 131.513586,
+    "started": "2018-03-16T13:35:08.533Z",
+    "commitId": "0b4661ee5fe19329a41bdca62fe190a9780b62f2",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57819619,
+    "name": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2",
+    "status": "success",
+    "duration": 151.345581,
+    "started": "2018-03-16T13:27:39.562Z",
+    "commitId": "c13ed54d9fd6520f4016b89efcab821e03af6e81",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57818907,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "success",
+    "duration": 72.893276,
+    "started": "2018-03-16T13:23:18.494Z",
+    "commitId": "83d5b4771b785891db622005c96646754682f0b6",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57817290,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "canceled",
+    "duration": 369.969583,
+    "started": "2018-03-16T13:16:57.741Z",
+    "commitId": "83d5b4771b785891db622005c96646754682f0b6",
+    "hasArtifacts": false
+  },
+  {
+    "id": 57797677,
+    "name": "2f71872c-8bbc-4260-a284-7c6f50ede169",
+    "status": "success",
+    "duration": 76.900129,
+    "started": "2018-03-16T11:36:22.765Z",
+    "commitId": "b4ed690f2384a4964fd86e8355bb6fd31a93773e",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57748832,
+    "name": "4a7cf261-fa75-4a18-a564-718ebefba390",
+    "status": "success",
+    "duration": 131.331216,
+    "started": "2018-03-16T07:16:06.876Z",
+    "commitId": "38a38da86a50b691d0fdf3a2b98171b863e40aa7",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57737217,
+    "name": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2",
+    "status": "success",
+    "duration": 77.523886,
+    "started": "2018-03-16T04:53:17.34Z",
+    "commitId": "3de167b123388ad6b3fd3689562f90aca17a5ca8",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57737174,
+    "name": "c6e1222c-993e-4bf2-840f-4795792f2143",
+    "status": "failed",
+    "duration": 143.578522,
+    "started": "2018-03-16T04:52:23.969Z",
+    "commitId": "6da8c5be78caeba9179e473138184bf4892a1a58",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57736824,
+    "name": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2",
+    "status": "success",
+    "duration": 67.566616,
+    "started": "2018-03-16T04:43:13.507Z",
+    "commitId": "c1653a53e0edce6e93d0993922abd7ae4329967f",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57736773,
+    "name": "47f68b9a-08cb-4b55-b0a7-a6664d118829",
+    "status": "success",
+    "duration": 75.728364,
+    "started": "2018-03-16T04:41:57.543Z",
+    "commitId": "51468e352e486077fba575fa54cb7ed06f10c746",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57363425,
+    "name": "3ca42f69-ff08-42b3-8d78-2ccb617e55f2",
+    "status": "success",
+    "duration": 73.872748,
+    "started": "2018-03-14T12:39:21.529Z",
+    "commitId": "3cba963f6aa8432613349b74d69b1e5bb3cc52d0",
+    "hasArtifacts": true
+  },
+  {
+    "id": 57198653,
+    "name": "2f71872c-8bbc-4260-a284-7c6f50ede169",
+    "status": "success",
+    "duration": 55.731011,
+    "started": "2018-03-13T17:13:19.075Z",
+    "commitId": "9c57072cbb8a9c2e23a3b2b27a5f3cdd81d06313",
+    "hasArtifacts": true
+  },
+  {
+    "id": 55921845,
+    "name": "42b60b69-bd60-4c3d-912c-4073d854573d",
+    "status": "success",
+    "duration": 83.226537,
+    "started": "2018-03-06T09:45:46.087Z",
+    "commitId": "22492e303a6494b80e37498f96469527f22e8c5e",
+    "hasArtifacts": true
+  }
+]
