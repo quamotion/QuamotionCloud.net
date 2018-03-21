@@ -137,16 +137,16 @@ namespace Quamotion.Cloud.Client
             return result;
         }
 
-        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, Guid deviceGroupId)
+        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, Guid deviceGroupId, string schedule, Dictionary<string, string> testScriptEnvironmentVariables, string testScriptParameters)
         {
             CreateTestRunRequest createTestRunRequest = new CreateTestRunRequest()
             {
                 App = application,
                 DeviceGroupId = deviceGroupId,
-                Schedule = "",
+                Schedule = schedule,
                 TestPackage = testPackage,
-                TestScriptEnvironmentVariables = new Dictionary<string, string>(),
-                TestScriptParameters = ""
+                TestScriptEnvironmentVariables = testScriptEnvironmentVariables,
+                TestScriptParameters = testScriptParameters
             };
 
             string response = await this.CloudConnection.PostJsonRequest("/project/" + tenant.Name + "/api/testRun", createTestRunRequest).ConfigureAwait(false);
@@ -156,7 +156,7 @@ namespace Quamotion.Cloud.Client
 
         public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, DeviceGroup deviceGroup)
         {
-            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup.DeviceGroupId).ConfigureAwait(false);
+            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup.DeviceGroupId, string.Empty, new Dictionary<string, string>(), string.Empty).ConfigureAwait(false);
         }
 
         public async Task<TestRun> GetTestRun(Tenant tenant, Guid testRunId)
