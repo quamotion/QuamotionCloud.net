@@ -11,16 +11,16 @@ namespace Quamotion.Cloud.Client.Models
         public string TokenType { get; set; }
 
         [JsonProperty("expires_in")]
-        public int ExpiresIn { get; set; }
+        public int? ExpiresIn { get; set; }
 
         [JsonProperty("ext_expires_in")]
-        public int ExtExpiresIn { get; set; }
+        public int? ExtExpiresIn { get; set; }
 
         [JsonProperty("expires_on")]
-        public int ExpiresOn { get; set; }
+        public int? ExpiresOn { get; set; }
 
         [JsonProperty("not_before")]
-        public int NotBefore { get; set; }
+        public int? NotBefore { get; set; }
 
         [JsonProperty("resource")]
         public string Resource { get; set; }

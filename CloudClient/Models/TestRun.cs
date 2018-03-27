@@ -14,7 +14,7 @@ namespace Quamotion.Cloud.Client.Models
         public Guid DeviceGroupId;
 
         [JsonProperty("operatingSystem")]
-        public int OperatingSystem;
+        public int? OperatingSystem;
 
         [JsonProperty("appId")]
         public string ApplicationId;

@@ -2,7 +2,7 @@
   {
     "testRunId": "7f487e20-1eab-4d0f-8c9d-e3054436e442",
     "deviceGroup": "1c3e3668-304b-4f3d-8cd5-1130d42b6d3e",
-    "operatingSystem": 1,
+    "operatingSystem": null,
     "appId": "demo.quamotion.Acquaint",
     "appVersion": "151",
     "testPackageName": "genymotiontest.ps1",
