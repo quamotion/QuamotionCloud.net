@@ -12,6 +12,25 @@ namespace Quamotion.Cloud.Client.Test
     public class ModelsTest
     {
         [Fact]
+        public void SchedulesTest()
+        {
+            string json = File.ReadAllText("schedules.json");
+            var schedules = JsonConvert.DeserializeObject<List<TestRunSchedule>>(json);
+            Assert.Single(schedules);
+            var schedule = schedules[0];
+
+            Assert.True(schedule.Active);
+            Assert.Equal(new DateTime(636577700036360000), schedule.CreatedAt);
+            Assert.Equal("0 */4 * * *", schedule.Cron);
+            Assert.Equal("UTC", schedule.CronTimezone);
+            Assert.Equal("Pipeline for test run 8195e174-3a5e-4152-99a6-120b5537073f", schedule.Description);
+            Assert.Equal(6031, schedule.Id);
+            Assert.Equal(new DateTime(636577776000000000), schedule.NextRunAt);
+            Assert.Equal("schedules/8195e1743a5e415299a6120b5537073f", schedule.Ref);
+            Assert.Equal(new DateTime(636577700036360000), schedule.UpdatedAt);
+        }
+
+        [Fact]
         public void ApplicationsTest()
         {
             string json = File.ReadAllText("applications.json");
@@ -116,7 +135,7 @@ namespace Quamotion.Cloud.Client.Test
             Assert.Equal("2f71872c-8bbc-4260-a284-7c6f50ede169", testRun.DeviceGroupId.ToString());
             Assert.Empty(testRun.Jobs);
             Assert.Equal(1, testRun.OperatingSystem);
-            Assert.Equal(new DateTime(2018,3,16,11,35,50), testRun.Scheduled);
+            Assert.Equal(new DateTime(2018, 3, 16, 11, 35, 50), testRun.Scheduled);
             Assert.Null(testRun.ScheduleId);
             Assert.Equal("genymotiontest.ps1", testRun.TestPackageName);
             Assert.Equal("0.1.0", testRun.TestPackageVersion);

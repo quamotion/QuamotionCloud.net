@@ -24,5 +24,8 @@ namespace Quamotion.Cloud.Client.Models
 
         [JsonProperty("testScriptEnvironmentVariables")]
         public Dictionary<string, string> TestScriptEnvironmentVariables { get; set; }
+
+        [JsonProperty("resultsCallBack")]
+        public ResultsCallBack ResultsCallBack { get; set; }
     }
 }

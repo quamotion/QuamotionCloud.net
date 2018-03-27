@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Quamotion.Cloud.Client
 {
@@ -22,17 +23,17 @@ namespace Quamotion.Cloud.Client
             this.Host = host;
         }
 
-        public async Task Login(string apiKey)
+        public async Task Login(string apiKey, CancellationToken cancellationToken)
         {
             Dictionary<string, string> loginData = new Dictionary<string, string>();
             loginData.Add("ApiKey", apiKey);
 
-            string response = await this.PostFormRequest("/api/login", loginData).ConfigureAwait(false);
+            string response = await this.PostFormRequest("/api/login", loginData, cancellationToken).ConfigureAwait(false);
             LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(response);
             this.AccessToken = loginResponse.AccessToken;
         }
 
-        public async Task<string> SendFile(string relativeUrl, string filePath)
+        public async Task<string> SendFile(string relativeUrl, string filePath, CancellationToken cancellationToken)
         {
             this.ensureLogin();
 
@@ -55,13 +56,23 @@ namespace Quamotion.Cloud.Client
             }
         }
 
-        public async Task<string> GetRequest(string relativeUrl)
+        public async Task<string> GetRequest(string relativeUrl, CancellationToken cancellationToken)
+        {
+            return await SendRequest(relativeUrl, HttpMethod.Get, cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task<string> DeleteRequest(string relativeUrl, CancellationToken cancellationToken)
+        {
+            return await SendRequest(relativeUrl, HttpMethod.Delete, cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task<string> SendRequest(string relativeUrl, HttpMethod httpMethod, CancellationToken cancellationToken)
         {
             this.ensureLogin();
 
             string url = this.Host + relativeUrl;
 
-            var requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
+            var requestMessage = new HttpRequestMessage(httpMethod, url);
             requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", this.AccessToken);
             var response = await client.SendAsync(requestMessage).ConfigureAwait(false);
             this.ensureSuccess(response);
@@ -69,7 +80,7 @@ namespace Quamotion.Cloud.Client
             return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
-        public async Task<string> PostFormRequest(string relativeUrl, Dictionary<string, string> form)
+        public async Task<string> PostFormRequest(string relativeUrl, Dictionary<string, string> form, CancellationToken cancellationToken)
         {
 
             string url = this.Host + relativeUrl;
@@ -84,7 +95,7 @@ namespace Quamotion.Cloud.Client
             return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
-        public async Task<string> PostJsonRequest(string relativeUrl, Object content)
+        public async Task<string> PostJsonRequest(string relativeUrl, Object content, CancellationToken cancellationToken)
         {
             this.ensureLogin();
 
@@ -94,7 +105,7 @@ namespace Quamotion.Cloud.Client
             requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", this.AccessToken);
             requestMessage.Content = new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
 
-            var response = await this.client.SendAsync(requestMessage).ConfigureAwait(false);
+            var response = await this.client.SendAsync(requestMessage, cancellationToken).ConfigureAwait(false);
             this.ensureSuccess(response);
 
             return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
