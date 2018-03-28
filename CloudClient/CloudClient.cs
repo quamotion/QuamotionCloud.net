@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Quamotion.Cloud.Client
 {
@@ -26,21 +27,21 @@ namespace Quamotion.Cloud.Client
         {
         }
 
-        public async Task Login(string apiToken)
+        public async Task Login(string apiToken, CancellationToken cancellationToken)
         {
-            await this.CloudConnection.Login(apiToken).ConfigureAwait(false);
+            await this.CloudConnection.Login(apiToken, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<List<Tenant>> GetTenants()
+        public async Task<List<Tenant>> GetTenants(CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.GetRequest("/api/project").ConfigureAwait(false);
+            string response = await this.CloudConnection.GetRequest("/api/project", cancellationToken).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<ProjectResponse>(response);
         }
 
 
-        public async Task<TestPackage> PublishTestPackage(Tenant tenant, string filePath)
+        public async Task<TestPackage> PublishTestPackage(Tenant tenant, string filePath, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.SendFile("/project/" + tenant.Name + "/api/testPackage", filePath).ConfigureAwait(false);
+            string response = await this.CloudConnection.SendFile("/project/" + tenant.Name + "/api/testPackage", filePath, cancellationToken).ConfigureAwait(false);
             TestPackageResponse testPackages = JsonConvert.DeserializeObject<TestPackageResponse>(response);
             if (testPackages.Count == 0)
             {
@@ -55,9 +56,9 @@ namespace Quamotion.Cloud.Client
             return testPackages[0];
         }
 
-        public async Task<Application> PublishApplication(Tenant tenant, string filePath)
+        public async Task<Application> PublishApplication(Tenant tenant, string filePath, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.SendFile("/project/" + tenant.Name + "/api/app", filePath).ConfigureAwait(false);
+            string response = await this.CloudConnection.SendFile("/project/" + tenant.Name + "/api/app", filePath, cancellationToken).ConfigureAwait(false);
 
             List<Application> applications = JsonConvert.DeserializeObject<ApplicationResponse>(response);
 
@@ -74,27 +75,27 @@ namespace Quamotion.Cloud.Client
             return applications.LastOrDefault();
         }
 
-        public async Task<List<Application>> GetApplications(Tenant tenant)
+        public async Task<List<Application>> GetApplications(Tenant tenant, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/app").ConfigureAwait(false);
+            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/app", cancellationToken).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<ApplicationResponse>(response);
         }
 
-        public async Task<List<TestPackage>> GetTestPackages(Tenant tenant)
+        public async Task<List<TestPackage>> GetTestPackages(Tenant tenant, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/testPackage").ConfigureAwait(false);
+            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/testPackage", cancellationToken).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<TestPackageResponse>(response);
         }
 
-        public async Task<List<DeviceGroup>> GetDeviceGroups(Tenant tenant)
+        public async Task<List<DeviceGroup>> GetDeviceGroups(Tenant tenant, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/deviceGroup").ConfigureAwait(false);
+            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/deviceGroup", cancellationToken).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<DeviceGroupResponse>(response);
         }
 
-        public async Task<DeviceGroup> GetDeviceGroup(Tenant tenant, Guid deviceGroupId)
+        public async Task<DeviceGroup> GetDeviceGroup(Tenant tenant, Guid deviceGroupId, CancellationToken cancellationToken)
         {
-            List<DeviceGroup> deviceGroups = await this.GetDeviceGroups(tenant).ConfigureAwait(false);
+            List<DeviceGroup> deviceGroups = await this.GetDeviceGroups(tenant, cancellationToken).ConfigureAwait(false);
             DeviceGroup result = null;
             foreach (DeviceGroup deviceGroup in deviceGroups)
             {
@@ -107,9 +108,9 @@ namespace Quamotion.Cloud.Client
             return result;
         }
 
-        public async Task<Application> GetApplication(Tenant tenant, string applicationId, string applicationVersion, string operatingSystem)
+        public async Task<Application> GetApplication(Tenant tenant, string applicationId, string applicationVersion, string operatingSystem, CancellationToken cancellationToken)
         {
-            List<Application> applications = await this.GetApplications(tenant).ConfigureAwait(false);
+            List<Application> applications = await this.GetApplications(tenant, cancellationToken).ConfigureAwait(false);
             Application result = null;
             foreach (Application application in applications)
             {
@@ -122,9 +123,9 @@ namespace Quamotion.Cloud.Client
             return result;
         }
 
-        public async Task<TestPackage> GetTestPackage(Tenant tenant, string name, string version)
+        public async Task<TestPackage> GetTestPackage(Tenant tenant, string name, string version, CancellationToken cancellationToken)
         {
-            List<TestPackage> testPackages = await this.GetTestPackages(tenant).ConfigureAwait(false);
+            List<TestPackage> testPackages = await this.GetTestPackages(tenant, cancellationToken).ConfigureAwait(false);
             TestPackage result = null;
             foreach (TestPackage testPackage in testPackages)
             {
@@ -137,7 +138,18 @@ namespace Quamotion.Cloud.Client
             return result;
         }
 
-        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, Guid deviceGroupId, string schedule, Dictionary<string, string> testScriptEnvironmentVariables, string testScriptParameters)
+        public async Task CancelTestRunSchedule(Tenant tenant, int scheduleId,CancellationToken cancellationToken)
+        {
+            await this.CloudConnection.DeleteRequest("/project/" + tenant.Name + "/api/schedule/" + scheduleId, cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task<List<TestRunSchedule>> GetTestRunSchedules(Tenant tenant, CancellationToken cancellationToken)
+        {
+            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/schedule", cancellationToken).ConfigureAwait(false);
+            return JsonConvert.DeserializeObject<List<TestRunSchedule>>(response);
+        }
+
+        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, Guid deviceGroupId, string schedule, ResultsCallBack resultsCallBack, Dictionary<string, string> testScriptEnvironmentVariables, string testScriptParameters, CancellationToken cancellationToken)
         {
             CreateTestRunRequest createTestRunRequest = new CreateTestRunRequest()
             {
@@ -146,22 +158,23 @@ namespace Quamotion.Cloud.Client
                 Schedule = schedule,
                 TestPackage = testPackage,
                 TestScriptEnvironmentVariables = testScriptEnvironmentVariables,
-                TestScriptParameters = testScriptParameters
+                TestScriptParameters = testScriptParameters,
+                ResultsCallBack = resultsCallBack
             };
 
-            string response = await this.CloudConnection.PostJsonRequest("/project/" + tenant.Name + "/api/testRun", createTestRunRequest).ConfigureAwait(false);
+            string response = await this.CloudConnection.PostJsonRequest("/project/" + tenant.Name + "/api/testRun", createTestRunRequest, cancellationToken).ConfigureAwait(false);
 
             return JsonConvert.DeserializeObject<TestRun>(response);
         }
 
-        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, DeviceGroup deviceGroup)
+        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, DeviceGroup deviceGroup, CancellationToken cancellationToken)
         {
-            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup.DeviceGroupId, string.Empty, new Dictionary<string, string>(), string.Empty).ConfigureAwait(false);
+            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup.DeviceGroupId, string.Empty, null, new Dictionary<string, string>(), string.Empty, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<TestRun> GetTestRun(Tenant tenant, Guid testRunId)
+        public async Task<TestRun> GetTestRun(Tenant tenant, Guid testRunId, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/testRun").ConfigureAwait(false);
+            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/testRun", cancellationToken).ConfigureAwait(false);
             var testRuns = JsonConvert.DeserializeObject<TestRunResponse>(response);
 
             TestRun result = null;
@@ -176,21 +189,21 @@ namespace Quamotion.Cloud.Client
             return result;
         }
 
-        public async Task<List<TestJob>> GetTestJobs(Tenant tenant, TestRun testRun)
+        public async Task<List<TestJob>> GetTestJobs(Tenant tenant, TestRun testRun, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/testRun/" + testRun.TestRunId + "/jobs").ConfigureAwait(false);
+            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/testRun/" + testRun.TestRunId + "/jobs", cancellationToken).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<TestJobResponse>(response);
         }
 
-        public async Task<TestJob> GetTestJob(Tenant tenant, int jobId)
+        public async Task<TestJob> GetTestJob(Tenant tenant, int jobId, CancellationToken cancellationToken)
         {
-            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/job/" + jobId).ConfigureAwait(false);
+            string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/job/" + jobId, cancellationToken).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<TestJob>(response);
         }
 
-        public async Task<string> GetJobLog(Tenant tenant, TestJob testJob)
+        public async Task<string> GetJobLog(Tenant tenant, TestJob testJob, CancellationToken cancellationToken)
         {
-            return await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/job/" + testJob.Id + "/log").ConfigureAwait(false);
+            return await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/job/" + testJob.Id + "/log", cancellationToken).ConfigureAwait(false);
         }
     }
 }

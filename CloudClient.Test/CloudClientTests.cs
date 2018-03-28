@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -17,12 +18,12 @@ namespace Quamotion.Cloud.Client.Test
             // arrange
             var receivedToken = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
-            cloudConnectionMock.Setup(cc => cc.Login(It.IsAny<string>())).Returns(Task.CompletedTask).Callback<string>(t => receivedToken = t);
+            cloudConnectionMock.Setup(cc => cc.Login(It.IsAny<string>(), CancellationToken.None)).Returns(Task.CompletedTask).Callback<string, CancellationToken>((t, cancellationToken) => receivedToken = t);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
             var token = new Guid().ToString();
-            await cloudClient.Login(token).ConfigureAwait(false);
+            await cloudClient.Login(token, CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal(token, receivedToken);
@@ -35,11 +36,11 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("tenants.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var tenants = await cloudClient.GetTenants().ConfigureAwait(false);
+            var tenants = await cloudClient.GetTenants(CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/api/project", requestUrl);
@@ -54,7 +55,7 @@ namespace Quamotion.Cloud.Client.Test
             string requestFile = null;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("publish-testpackage-response.json");
-            cloudConnectionMock.Setup(cc => cc.SendFile(It.IsAny<string>(), It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string, string>((url, file) =>
+            cloudConnectionMock.Setup(cc => cc.SendFile(It.IsAny<string>(), It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, string, CancellationToken>((url, file, cancellationToken) =>
             {
                 requestUrl = url;
                 requestFile = file;
@@ -63,7 +64,7 @@ namespace Quamotion.Cloud.Client.Test
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var testPackage = await cloudClient.PublishTestPackage(new Tenant() { Name = "localbsg" }, "genymotiontest.ps1").ConfigureAwait(false);
+            var testPackage = await cloudClient.PublishTestPackage(new Tenant() { Name = "localbsg" }, "genymotiontest.ps1", CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/testPackage", requestUrl);
@@ -80,7 +81,7 @@ namespace Quamotion.Cloud.Client.Test
             string requestFile = null;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("publish-application-response.json");
-            cloudConnectionMock.Setup(cc => cc.SendFile(It.IsAny<string>(), It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string, string>((url, file) =>
+            cloudConnectionMock.Setup(cc => cc.SendFile(It.IsAny<string>(), It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, string, CancellationToken>((url, file, cancellationToken) =>
             {
                 requestUrl = url;
                 requestFile = file;
@@ -89,7 +90,7 @@ namespace Quamotion.Cloud.Client.Test
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var application = await cloudClient.PublishApplication(new Tenant() { Name = "localbsg" }, "acquaint.apk").ConfigureAwait(false);
+            var application = await cloudClient.PublishApplication(new Tenant() { Name = "localbsg" }, "acquaint.apk", CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/app", requestUrl);
@@ -105,11 +106,11 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("applications.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string,CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var applications = await cloudClient.GetApplications(new Tenant() { Name = "localbsg" }).ConfigureAwait(false);
+            var applications = await cloudClient.GetApplications(new Tenant() { Name = "localbsg" }, CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/app", requestUrl);
@@ -123,11 +124,11 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("test_packages.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var testPackages = await cloudClient.GetTestPackages(new Tenant() { Name = "localbsg" }).ConfigureAwait(false);
+            var testPackages = await cloudClient.GetTestPackages(new Tenant() { Name = "localbsg" }, CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/testPackage", requestUrl);
@@ -141,11 +142,11 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("device_groups.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var deviceGroups = await cloudClient.GetDeviceGroups(new Tenant() { Name = "localbsg" }).ConfigureAwait(false);
+            var deviceGroups = await cloudClient.GetDeviceGroups(new Tenant() { Name = "localbsg" }, CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/deviceGroup", requestUrl);
@@ -160,11 +161,11 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("device_groups.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var deviceGroup = await cloudClient.GetDeviceGroup(new Tenant() { Name = "localbsg" }, new Guid("6185bb7c-1f96-40bb-9f6c-798bd7547d36")).ConfigureAwait(false);
+            var deviceGroup = await cloudClient.GetDeviceGroup(new Tenant() { Name = "localbsg" }, new Guid("6185bb7c-1f96-40bb-9f6c-798bd7547d36"), CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/deviceGroup", requestUrl);
@@ -178,11 +179,11 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("applications.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var application = await cloudClient.GetApplication(new Tenant() { Name = "localbsg" }, "demo.quamotion.Acquaint", "1.51", "iOS").ConfigureAwait(false);
+            var application = await cloudClient.GetApplication(new Tenant() { Name = "localbsg" }, "demo.quamotion.Acquaint", "1.51", "iOS", CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/app", requestUrl);
@@ -196,11 +197,11 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("test_packages.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
-            var testPackage = await cloudClient.GetTestPackage(new Tenant() { Name = "localbsg" }, "genymotiontest (8).ps1", "0.3").ConfigureAwait(false);
+            var testPackage = await cloudClient.GetTestPackage(new Tenant() { Name = "localbsg" }, "genymotiontest (8).ps1", "0.3", CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/testPackage", requestUrl);
@@ -218,16 +219,16 @@ namespace Quamotion.Cloud.Client.Test
             var cloudConnectionMock = new Mock<ICloudConnection>();
 
             string testPackagesJson = File.ReadAllText("test_packages.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest("/project/localbsg/api/testPackage")).Returns(Task.FromResult(testPackagesJson));
+            cloudConnectionMock.Setup(cc => cc.GetRequest("/project/localbsg/api/testPackage", CancellationToken.None)).Returns(Task.FromResult(testPackagesJson));
 
             string applicationsJson = File.ReadAllText("applications.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest("/project/localbsg/api/app")).Returns(Task.FromResult(applicationsJson));
+            cloudConnectionMock.Setup(cc => cc.GetRequest("/project/localbsg/api/app", CancellationToken.None)).Returns(Task.FromResult(applicationsJson));
 
             string deviceGroupsJson = File.ReadAllText("device_groups.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest("/project/localbsg/api/deviceGroup")).Returns(Task.FromResult(deviceGroupsJson));
+            cloudConnectionMock.Setup(cc => cc.GetRequest("/project/localbsg/api/deviceGroup", CancellationToken.None)).Returns(Task.FromResult(deviceGroupsJson));
 
             string scheduleResponse = File.ReadAllText("schedule-testrun-response.json");
-            cloudConnectionMock.Setup(cc => cc.PostJsonRequest(It.IsAny<string>(), It.IsAny<object>())).Returns(Task.FromResult(scheduleResponse)).Callback<string, object>((url, content) =>
+            cloudConnectionMock.Setup(cc => cc.PostJsonRequest(It.IsAny<string>(), It.IsAny<object>(), CancellationToken.None)).Returns(Task.FromResult(scheduleResponse)).Callback<string, object, CancellationToken>((url, content, cancellationToken) =>
              {
                  requestUrl = url;
                  requestContent = content;
@@ -237,10 +238,10 @@ namespace Quamotion.Cloud.Client.Test
 
             // act
             var tenant = new Tenant() { Name = "localbsg" };
-            var testPackage = await cloudClient.GetTestPackage(tenant, "quamotion-test-acquaint", "0.0.1.50584433").ConfigureAwait(false);
-            var application = await cloudClient.GetApplication(tenant, "demo.quamotion.Acquaint", "151", "Android").ConfigureAwait(false);
-            var deviceGroup = await cloudClient.GetDeviceGroup(tenant, new Guid("4a7cf261-fa75-4a18-a564-718ebefba390")).ConfigureAwait(false);
-            var testRun = await cloudClient.ScheduleTestRun(tenant, testPackage, application, deviceGroup).ConfigureAwait(false);
+            var testPackage = await cloudClient.GetTestPackage(tenant, "quamotion-test-acquaint", "0.0.1.50584433", CancellationToken.None).ConfigureAwait(false);
+            var application = await cloudClient.GetApplication(tenant, "demo.quamotion.Acquaint", "151", "Android", CancellationToken.None).ConfigureAwait(false);
+            var deviceGroup = await cloudClient.GetDeviceGroup(tenant, new Guid("4a7cf261-fa75-4a18-a564-718ebefba390"), CancellationToken.None).ConfigureAwait(false);
+            var testRun = await cloudClient.ScheduleTestRun(tenant, testPackage, application, deviceGroup, CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/testRun", requestUrl);
@@ -284,12 +285,12 @@ namespace Quamotion.Cloud.Client.Test
             string requestUrl = string.Empty;
             var cloudConnectionMock = new Mock<ICloudConnection>();
             string json = File.ReadAllText("test_runs.json");
-            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>())).Returns(Task.FromResult(json)).Callback<string>(url => requestUrl = url);
+            cloudConnectionMock.Setup(cc => cc.GetRequest(It.IsAny<string>(), CancellationToken.None)).Returns(Task.FromResult(json)).Callback<string, CancellationToken>((url, cancellationToken) => requestUrl = url);
             var cloudClient = new CloudClient(cloudConnectionMock.Object);
 
             // act
             var tenant = new Tenant() { Name = "localbsg" };
-            var testRun = await cloudClient.GetTestRun(tenant, new Guid("6774bf25-c57a-4ba3-bc45-67545cd79976")).ConfigureAwait(false);
+            var testRun = await cloudClient.GetTestRun(tenant, new Guid("6774bf25-c57a-4ba3-bc45-67545cd79976"), CancellationToken.None).ConfigureAwait(false);
 
             // assert
             Assert.Equal("/project/localbsg/api/testRun", requestUrl);
