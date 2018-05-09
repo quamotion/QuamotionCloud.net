@@ -171,7 +171,28 @@ namespace Quamotion.Cloud.Client
         {
             return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup, string.Empty, null, new Dictionary<string, string>(), string.Empty, cancellationToken).ConfigureAwait(false);
         }
-        
+
+        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, string deviceGroupName, List<string> deviceGroupTags, CancellationToken cancellationToken)
+        {
+            var deviceGroup = new DeviceGroup()
+            {
+                DeviceGroupId = Guid.NewGuid(),
+                DisplayName = deviceGroupName,
+                Name = deviceGroupName,
+                Devices = new List<DeviceSelection>()
+                {
+                    new DeviceSelection()
+                    {
+                        DeviceSelectionId = Guid.NewGuid().ToString(),
+                        DisplayName = deviceGroupName,
+                        Tags = deviceGroupTags
+                    }
+                }
+            };
+
+            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup, string.Empty, null, new Dictionary<string, string>(), string.Empty, cancellationToken).ConfigureAwait(false);
+        }
+
         public async Task<TestRun> GetTestRun(Tenant tenant, Guid testRunId, CancellationToken cancellationToken)
         {
             string response = await this.CloudConnection.GetRequest("/project/" + tenant.Name + "/api/testRun", cancellationToken).ConfigureAwait(false);
