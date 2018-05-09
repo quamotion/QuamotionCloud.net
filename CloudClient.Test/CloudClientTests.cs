@@ -1,4 +1,5 @@
 ﻿using Moq;
+using Newtonsoft.Json;
 using Quamotion.Cloud.Client.Models;
 using System;
 using System.Collections.Generic;
@@ -169,7 +170,7 @@ namespace Quamotion.Cloud.Client.Test
 
             // assert
             Assert.Equal("/project/localbsg/api/deviceGroup", requestUrl);
-            Assert.Equal("Samsung Galaxy S7 - Android 7.0 (Genymotion)", deviceGroup.DisplayName);
+            Assert.Equal("Samsung Galaxy S7 - Android 7.0 (Genymotion)", deviceGroup.Name);
         }
 
         [Fact]
@@ -207,6 +208,27 @@ namespace Quamotion.Cloud.Client.Test
             Assert.Equal("/project/localbsg/api/testPackage", requestUrl);
             Assert.Equal("genymotiontest (8).ps1", testPackage.Name);
             Assert.Equal("PowerShellScript", testPackage.TestPackageType);
+        }
+
+        [Fact]
+        public async void SerializeDeviceGroup()
+        {
+            var deviceGroup = new DeviceGroup()
+            {
+                DeviceGroupId = Guid.NewGuid(),
+                Name = "DeviceGroup",
+                Devices = new List<DeviceSelection>()
+                {
+                    new DeviceSelection()
+                    {
+                        DeviceSelectionId = Guid.NewGuid().ToString(),
+                        Name = "DeviceSelection1",
+                        Tags = new List<string>() { "Tag1", "Teg2" }
+                    }
+                }
+            };
+
+            var json = JsonConvert.SerializeObject(deviceGroup);
         }
 
         [Fact]

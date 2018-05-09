@@ -61,10 +61,10 @@ namespace Quamotion.Cloud.Client.Test
             Assert.Single(deviceGroup.Devices[0].Variables);
             Assert.Equal("GENYMOTION_TEMPLATE", deviceGroup.Devices[0].Variables.First().Key);
             Assert.Equal("74ad0f8b-90f5-47c5-bc7a-9c05b04de4ca", deviceGroup.Devices[0].Variables.First().Value);
-            Assert.Equal("Google Pixel - Android 8.0 (Genymotion)", deviceGroup.Devices[0].DisplayName);
+            Assert.Equal("Google Pixel - Android 8.0 (Genymotion)", deviceGroup.Devices[0].Name);
             Assert.Equal(new List<string> { "genymotion" }, deviceGroup.Devices[0].Tags);
 
-            Assert.Equal("Genymotion top 25 devices", deviceGroup.DisplayName);
+            Assert.Equal("Genymotion top 25 devices", deviceGroup.Name);
             Assert.Equal("genymotion-top-25-devices", deviceGroup.Name);
             Assert.Equal(new Dictionary<string, string>(), deviceGroup.Variables);
         }

@@ -177,14 +177,13 @@ namespace Quamotion.Cloud.Client
             var deviceGroup = new DeviceGroup()
             {
                 DeviceGroupId = Guid.NewGuid(),
-                DisplayName = deviceGroupName,
                 Name = deviceGroupName,
                 Devices = new List<DeviceSelection>()
                 {
                     new DeviceSelection()
                     {
                         DeviceSelectionId = Guid.NewGuid().ToString(),
-                        DisplayName = deviceGroupName,
+                        Name = deviceGroupName,
                         Tags = deviceGroupTags
                     }
                 }
