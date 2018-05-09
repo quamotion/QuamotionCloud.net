@@ -247,7 +247,7 @@ namespace Quamotion.Cloud.Client.Test
             Assert.Equal("/project/localbsg/api/testRun", requestUrl);
             Assert.IsType<CreateTestRunRequest>(requestContent);
             var testRunRequest = requestContent as CreateTestRunRequest;
-            Assert.Equal(deviceGroup.DeviceGroupId, testRunRequest.DeviceGroupId);
+            Assert.Equal(deviceGroup.DeviceGroupId, testRunRequest.DeviceGroup.DeviceGroupId);
             Assert.Equal(application.AppId, testRunRequest.App.AppId);
             Assert.Equal(application.CpuType, testRunRequest.App.CpuType);
             Assert.Equal(application.DisplayName, testRunRequest.App.DisplayName);

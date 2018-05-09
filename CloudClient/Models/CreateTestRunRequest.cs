@@ -13,8 +13,8 @@ namespace Quamotion.Cloud.Client.Models
         [JsonProperty("testPackage")]
         public TestPackage TestPackage { get; set; }
 
-        [JsonProperty("deviceGroupId")]
-        public Guid DeviceGroupId { get; set; }
+        [JsonProperty("deviceGroup")]
+        public DeviceGroup DeviceGroup { get; set; }
 
         [JsonProperty("schedule")]
         public string Schedule { get; set; }
