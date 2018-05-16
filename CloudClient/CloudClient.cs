@@ -149,12 +149,12 @@ namespace Quamotion.Cloud.Client
             return JsonConvert.DeserializeObject<List<TestRunSchedule>>(response);
         }
 
-        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, Guid deviceGroupId, string schedule, ResultsCallBack resultsCallBack, Dictionary<string, string> testScriptEnvironmentVariables, string testScriptParameters, CancellationToken cancellationToken)
+        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, DeviceGroup deviceGroup, string schedule, ResultsCallBack resultsCallBack, Dictionary<string, string> testScriptEnvironmentVariables, string testScriptParameters, CancellationToken cancellationToken)
         {
             CreateTestRunRequest createTestRunRequest = new CreateTestRunRequest()
             {
                 App = application,
-                DeviceGroupId = deviceGroupId,
+                DeviceGroup = deviceGroup,
                 Schedule = schedule,
                 TestPackage = testPackage,
                 TestScriptEnvironmentVariables = testScriptEnvironmentVariables,
@@ -169,7 +169,27 @@ namespace Quamotion.Cloud.Client
 
         public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, DeviceGroup deviceGroup, CancellationToken cancellationToken)
         {
-            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup.DeviceGroupId, string.Empty, null, new Dictionary<string, string>(), string.Empty, cancellationToken).ConfigureAwait(false);
+            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup, string.Empty, null, new Dictionary<string, string>(), string.Empty, cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task<TestRun> ScheduleTestRun(Tenant tenant, TestPackage testPackage, Application application, string deviceGroupName, List<string> deviceGroupTags, CancellationToken cancellationToken)
+        {
+            var deviceGroup = new DeviceGroup()
+            {
+                DeviceGroupId = Guid.NewGuid(),
+                Name = deviceGroupName,
+                Devices = new List<DeviceSelection>()
+                {
+                    new DeviceSelection()
+                    {
+                        DeviceSelectionId = Guid.NewGuid().ToString(),
+                        Name = deviceGroupName,
+                        Tags = deviceGroupTags
+                    }
+                }
+            };
+
+            return await this.ScheduleTestRun(tenant, testPackage, application, deviceGroup, string.Empty, null, new Dictionary<string, string>(), string.Empty, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<TestRun> GetTestRun(Tenant tenant, Guid testRunId, CancellationToken cancellationToken)

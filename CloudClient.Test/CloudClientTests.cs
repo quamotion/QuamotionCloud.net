@@ -1,4 +1,5 @@
 ﻿using Moq;
+using Newtonsoft.Json;
 using Quamotion.Cloud.Client.Models;
 using System;
 using System.Collections.Generic;
@@ -169,7 +170,7 @@ namespace Quamotion.Cloud.Client.Test
 
             // assert
             Assert.Equal("/project/localbsg/api/deviceGroup", requestUrl);
-            Assert.Equal("Samsung Galaxy S7 - Android 7.0 (Genymotion)", deviceGroup.DisplayName);
+            Assert.Equal("Samsung Galaxy S7 - Android 7.0 (Genymotion)", deviceGroup.Name);
         }
 
         [Fact]
@@ -210,6 +211,27 @@ namespace Quamotion.Cloud.Client.Test
         }
 
         [Fact]
+        public async void SerializeDeviceGroup()
+        {
+            var deviceGroup = new DeviceGroup()
+            {
+                DeviceGroupId = Guid.NewGuid(),
+                Name = "DeviceGroup",
+                Devices = new List<DeviceSelection>()
+                {
+                    new DeviceSelection()
+                    {
+                        DeviceSelectionId = Guid.NewGuid().ToString(),
+                        Name = "DeviceSelection1",
+                        Tags = new List<string>() { "Tag1", "Teg2" }
+                    }
+                }
+            };
+
+            var json = JsonConvert.SerializeObject(deviceGroup);
+        }
+
+        [Fact]
         public async Task ScheduleTestRunTest()
         {
             // arrange
@@ -247,7 +269,7 @@ namespace Quamotion.Cloud.Client.Test
             Assert.Equal("/project/localbsg/api/testRun", requestUrl);
             Assert.IsType<CreateTestRunRequest>(requestContent);
             var testRunRequest = requestContent as CreateTestRunRequest;
-            Assert.Equal(deviceGroup.DeviceGroupId, testRunRequest.DeviceGroupId);
+            Assert.Equal(deviceGroup.DeviceGroupId, testRunRequest.DeviceGroup.DeviceGroupId);
             Assert.Equal(application.AppId, testRunRequest.App.AppId);
             Assert.Equal(application.CpuType, testRunRequest.App.CpuType);
             Assert.Equal(application.DisplayName, testRunRequest.App.DisplayName);

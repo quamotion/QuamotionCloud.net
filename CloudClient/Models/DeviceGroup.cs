@@ -13,9 +13,6 @@ namespace Quamotion.Cloud.Client.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("displayName")]
-        public string DisplayName { get; set; }
-
         [JsonProperty("devices")]
         public List<DeviceSelection> Devices { get; set; }
 
